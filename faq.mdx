@@ -42,13 +42,4 @@ Documentation: https://developers.cloudflare.com/ssl/origin-configuration/ssl-mo
     Other build packs could reach database internally - if they are placed in the same network. You can check this by going to the `Server` tab on both resources and check if they are in the same network and server.
   </Accordion>
 
-<Accordion title="Root password reset without SMTP.">
-From `v4.0.0-beta.58`, you can use the following method to reset the root user's password, in case you forgot and do not have an SMTP server set, so you cannot request a forgot password.
-
-Login to your server through SSH and execute the following command:
-
-```bash
-docker exec -ti coolify bash -c "php artisan root:reset-password"
-```
-  </Accordion>
 </AccordionGroup>

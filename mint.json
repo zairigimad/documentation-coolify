@@ -40,6 +40,10 @@
     {
       "name": "Knowledge Base",
       "url": "knowledge-base"
+    },
+    {
+      "name": "Languages & Services",
+      "url": "langs-and-services"
     }
   ],
   "anchors": [
@@ -62,23 +66,95 @@
       ]
     },
     {
+      "group": "Languages",
+      "pages": [
+        "langs-and-services/introduction",
+        "langs-and-services/rails",
+        "langs-and-services/laravel",
+        "langs-and-services/django",
+        "langs-and-services/svelte-kit",
+        "langs-and-services/jekyll"
+      ]
+    },
+    {
+      "group": "Services",
+      "pages": [
+        "langs-and-services/services/plausible"
+      ]
+    },
+    {
       "group": "Knowledge Base",
       "pages": [
         "knowledge-base/introduction",
+        "knowledge-base/monitoring",
+        "knowledge-base/environment-variables",
+        "knowledge-base/dns-configuration",
+        "knowledge-base/domains",
+        "knowledge-base/drain-logs",
+        "knowledge-base/commands"
+      ]
+    },
+    {
+      "group": "Git",
+      "pages": [
         {
-          "group": "Server",
+          "group": "Github",
           "pages": [
-            "knowledge-base/server/oracle-cloud",
-            "knowledge-base/server/firewall",
-            "knowledge-base/server/openssh",
-            "knowledge-base/server/build-server",
-            "knowledge-base/server/multiple-servers"
+            "knowledge-base/git/github/integration",
+            "knowledge-base/git/github/github-actions"
           ]
         },
-        "knowledge-base/dns-configuration"
+        {
+          "group": "Gitlab",
+          "pages": [
+            "knowledge-base/git/gitlab/integration"
+          ]
+        },
+        {
+          "group": "Bitbucket",
+          "pages": [
+            "knowledge-base/git/bitbucket/integration"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Server",
+      "pages": [
+        "knowledge-base/server/openssh",
+        "knowledge-base/server/firewall",
+        "knowledge-base/server/build-server",
+        "knowledge-base/server/multiple-servers",
+        "knowledge-base/server/oracle-cloud",
+        "knowledge-base/server/proxies"
+      ]
+    },
+    {
+      "group": "Docker",
+      "pages": [
+        "knowledge-base/docker/swarm",
+        "knowledge-base/docker/registry",
+        "knowledge-base/docker/compose",
+        "knowledge-base/docker/custom-commands"
+      ]
+    },
+    {
+      "group": "Cloudflare",
+      "pages": [
+        "knowledge-base/cloudflare/tunnels"
+      ]
+    },
+    {
+      "group": "Traefik",
+      "pages": [
+        "knowledge-base/traefik/basic-auth",
+        "knowledge-base/traefik/dashboard",
+        "knowledge-base/traefik/dynamic-configurations",
+        "knowledge-base/traefik/load-balancing",
+        "knowledge-base/traefik/redirects",
+        "knowledge-base/traefik/wildcard-certificates"
       ]
     }
-  
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/coollabsio",
