@@ -57,12 +57,24 @@
         "quickstart",
         "installation",
         "uninstall",
-        "faq"
+        "faq",
+        "contact"
       ]
     },
     {
       "group": "Knowledge Base",
       "pages": [
+        "knowledge-base/introduction",
+        {
+          "group": "Server",
+          "pages": [
+            "knowledge-base/server/oracle-cloud",
+            "knowledge-base/server/firewall",
+            "knowledge-base/server/openssh",
+            "knowledge-base/server/build-server",
+            "knowledge-base/server/multiple-servers"
+          ]
+        },
         "knowledge-base/dns-configuration"
       ]
     }
