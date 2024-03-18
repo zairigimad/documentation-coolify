@@ -1,51 +1,52 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
-  "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+  "name": "Coolify Documentation",
+  "metadata": {
+    "og:site_name": "Coolify",
+    "og:description": "Self-hosting with superpowers.",
+    "og:title": "Coolify Documentation",
+    "og:url": "https://coolify.io",
+    "og:locale": "en_US",
+    "og:image": "https://cdn.coollabs.io/assets/coolify/og-image-docs.png",
+    "twitter:title": "Coolify Documentation",
+    "twitter:description": "Self-hosting with superpowers.",
+    "twitter:url": "https://twitter.com/coolifyio",
+    "twitter:site": "@coolifyio"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/coolify.png",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#6B16ED",
+    "light": "#FCD34D",
+    "dark": "#6B16ED",
     "anchors": {
       "from": "#0D9373",
       "to": "#07C983"
+    },
+    "background": {
+      "dark": "#181818"
     }
   },
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:hi@coollabs.io"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Cloud",
+    "url": "https://app.coolify.io"
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Knowledge Base",
+      "url": "knowledge-base"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
       "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "icon": "discord",
+      "url": "https://coolify.io/discord"
     }
   ],
   "navigation": [
@@ -54,38 +55,21 @@
       "pages": [
         "introduction",
         "quickstart",
-        "development"
+        "installation",
+        "uninstall",
+        "faq"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Knowledge Base",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "knowledge-base/dns-configuration"
       ]
     }
+  
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/coollabsio",
+    "github": "https://github.com/coollabsio/coolify"
   }
 }
