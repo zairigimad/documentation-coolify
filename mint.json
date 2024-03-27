@@ -1,5 +1,8 @@
 {
   "$schema": "https://mintlify.com/schema.json",
+  "openapi": [
+    "/openapi.yaml"
+  ],
   "name": "Coolify Documentation",
   "metadata": {
     "og:site_name": "Coolify",
@@ -44,6 +47,10 @@
     {
       "name": "Applications, Databases & Services",
       "url": "resources"
+    },
+    {
+      "name": "API",
+      "url": "api-reference"
     }
   ],
   "anchors": [
@@ -107,6 +114,29 @@
         "knowledge-base/domains",
         "knowledge-base/drain-logs",
         "knowledge-base/commands"
+      ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        "api-reference/introduction",
+        "api-reference/authorization"
+      ]
+    },
+    {
+      "group": "Deploy",
+      "pages": [
+        "api-reference/deploy-webhook"
+      ]
+    },
+    {
+      "group": "Teams",
+      "pages": [
+        "api-reference/list-teams",
+        "api-reference/list-team-members",
+        "api-reference/get-current-team",
+        "api-reference/list-current-team-members",
+        "api-reference/get-team-by-teamid"
       ]
     },
     {

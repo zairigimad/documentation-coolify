@@ -1,0 +1,193 @@
+openapi: "3.0.2"
+info:
+  title: Coolify API
+  version: "1.0"
+servers:
+  - url: https://app.coolify.io/v1
+    description: Coolify Cloud API. Change the host to your own instance if you are self-hosting.
+paths:
+  /deploy:
+    get:
+      summary: Deploy Webhook
+      description: Deploy a resource by UUID or tag.
+      parameters:
+        - in: query
+          name: uuid
+          required: true
+          schema:
+            type: string
+          description: The resource to deploy by UUID. Could be a comma separated list of UUIDs.
+          allowReserved: true
+          style: form
+        - in: query
+          name: tag
+          required: true
+          schema:
+            type: string
+          description: The resource to deploy by tag. Could be a comma separated list of tags.
+          allowReserved: true
+          style: form
+      responses:
+        "200":
+          description: OK
+  /teams:
+    get:
+      summary: List Teams
+      description: Get the list of teams for the currently authenticated user.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    description:
+                      type: string
+                    personal_team:
+                      type: boolean
+                    created_at:
+                      type: string
+                      format: date-time
+                    updated_at:
+                      type: string
+                      format: date-time
+  /team/{teamId}:
+    get:
+      summary: Get Team by teamId
+      description: Get a team by `teamId`.
+      parameters:
+        - in: path
+          name: teamId
+          required: true
+          schema:
+            type: string
+          description: The team ID.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  personal_team:
+                    type: boolean
+                  created_at:
+                    type: string
+                    format: date-time
+                  updated_at:
+                    type: string
+                    format: date-time
+  /team/{teamId}/members:
+    get:
+      summary: List Team Members
+      description: Get the list of members in a team by `teamId`.
+      parameters:
+        - in: path
+          name: teamId
+          required: true
+          schema:
+            type: string
+          description: The team ID.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    email:
+                      type: string
+                    email_verified_at:
+                      type: string
+                      format: date-time
+                    created_at:
+                      type: string
+                      format: date-time
+                    updated_at:
+                      type: string
+                      format: date-time
+  /team/current:
+    get:
+      summary: Get Current Team
+      description: Get the currently authenticated team.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  personal_team:
+                    type: boolean
+                  created_at:
+                    type: string
+                    format: date-time
+                  updated_at:
+                    type: string
+                    format: date-time
+  /team/current/members:
+    get:
+      summary: List Current Team Members
+      description: Get the list of members in the currently authenticated team.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    email:
+                      type: string
+                    email_verified_at:
+                      type: string
+                      format: date-time
+                    created_at:
+                      type: string
+                      format: date-time
+                    updated_at:
+                      type: string
+                      format: date-time
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: "Go to `Keys & Tokens` / `API tokens` and create a new token. Use the token as the bearer token."
+security:
+  - bearerAuth: []
