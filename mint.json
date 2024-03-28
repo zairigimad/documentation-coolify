@@ -86,6 +86,7 @@
         "resources/laravel",
         "resources/django",
         "resources/svelte-kit",
+        "resources/nextjs",
         "resources/jekyll"
       ]
     },
