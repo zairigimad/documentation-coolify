@@ -11,6 +11,10 @@ To validate your configuration, make sure the followings are set on your server.
 Some commands may vary based on your Linux distribution.
 </Warning>
 
+<Warning>
+Make sure the SSH key does not have a passphrase. Connection will fail if the key has a passphrase.
+</Warning>
+
 <Steps>
   <Step title="SSH Enabled">
     Make sure SSH is enabled and you can connect to your server with SSH from your local machine with root user.
@@ -65,6 +69,10 @@ sudo rc-service sshd restart
 If you installed Coolify with the automated script, you don't need to do anything else. 
 
 If you installed Coolify manually, you need to add an SSH key to the `~/.ssh/authorized_keys` file.
+
+<Warning>
+Make sure the SSH key does not have a passphrase. Connection will fail if the key has a passphrase.
+</Warning>
 
 ```bash
 # Create a new SSH key pair ed25519 (recommended) or rsa (legacy) with the following command.
