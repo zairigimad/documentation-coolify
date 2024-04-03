@@ -196,6 +196,7 @@
     {
       "group": "Traefik",
       "pages": [
+        "knowledge-base/traefik/healthcheck",
         "knowledge-base/traefik/basic-auth",
         "knowledge-base/traefik/dashboard",
         "knowledge-base/traefik/dynamic-configurations",
