@@ -74,14 +74,12 @@
         "quickstart",
         "installation",
         "uninstall",
-        "faq",
         "contact"
       ]
     },
     {
       "group": "Applications",
       "pages": [
-        "resources/introduction",
         "resources/rails",
         "resources/laravel",
         "resources/django",
@@ -91,31 +89,27 @@
       ]
     },
     {
-      "group": "Databases",
-      "pages": [
-        "resources/databases/introduction"
-      ]
-    },
-    {
       "group": "Services",
       "pages": [
-        "resources/services/add-service",
         "resources/services/plausible"
       ]
     },
     {
       "group": "Knowledge Base",
       "pages": [
-        "knowledge-base/introduction",
+        "knowledge-base/faq",
+        "knowledge-base/applications",
+        "knowledge-base/databases",
+        "knowledge-base/domains",
         "knowledge-base/monitoring",
         "knowledge-base/environment-variables",
         "knowledge-base/persistent-storage",
         "knowledge-base/backups",
         "knowledge-base/s3-storages",
         "knowledge-base/dns-configuration",
-        "knowledge-base/domains",
         "knowledge-base/drain-logs",
-        "knowledge-base/commands"
+        "knowledge-base/commands",
+        "knowledge-base/add-a-service"
       ]
     },
     {

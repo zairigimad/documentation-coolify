@@ -1,6 +1,7 @@
 ---
-title: Introduction
-description: "Here you can find the documentation for languages/framework/services specific configurations."
+title: Applications
+'og:title': "General Application Configurations with Coolify"
+description: "A general guide to configure your application with Coolify."
 ---
 
 Application could be any type of web application. It could be a static site, a NodeJS application, a PHP application, etc.
@@ -32,6 +33,12 @@ If you are building a static site, it is important to set the public directory, 
 ### Port Exposes
 
 Port exposes are required for Docker Engine to know which ports to expose. The first port will be the default port for health checks.
+
+Examples: 
+
+If you have a NodeJS application that listens on port 3000, you can set it like this: `3000`.
+If you have a PHP-FPM application that listens on port 9000, you can set it like this: `9000`.
+If you have a Nginx server that listens on port 80, you can set it like this: `80`.
 
 ### Port Mappings
 
