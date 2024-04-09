@@ -4,16 +4,51 @@ title: Uninstall - Self-hosted
 description: "A guide on how to uninstall the self-hosted version of Coolify from your server."
 ---
 
-You can easily uninstall Coolify by stopping the following containers,
-`coolify`,`coolify-db`, `coolify-proxy`, `coolify-redis` and `coolify-realtime` or by executing the following script:
+To uninstall the self-hosted version of Coolify from your server, follow these steps:
 
-```bash
-docker stop -t 0 coolify coolify-db coolify-proxy coolify-redis coolify-realtime
-docker rm coolify coolify-db coolify-proxy coolify-redis coolify-realtime
-```
+1. **Stop and Remove Containers:**
 
-You also need to cleanup all the docker volumes as well.
+   Use the following command to stop the Coolify containers with a timeout of 0, ensuring they stop immediately, and then remove them:
 
-```bash
-docker volume rm coolify-db coolify-redis
-```
+   ```bash
+   sudo docker stop -t 0 coolify coolify-realtime coolify-db coolify-redis
+   sudo docker rm coolify coolify-realtime coolify-db coolify-redis
+   ```
+
+2. **Remove Docker Volumes:**
+
+   Execute the command below to remove the Docker volumes associated with Coolify:
+
+   ```bash
+   sudo docker volume rm coolify-db coolify-redis
+   ```
+
+3. **Remove Docker Network:**
+
+   Remove the custom Docker network named "coolify":
+
+   ```bash
+   sudo docker network rm coolify
+   ```
+
+4. **Delete Coolify Data Directory:**
+
+   Delete the directory where Coolify data is stored:
+
+   ```bash
+   sudo rm -rf /data/coolify
+   ```
+
+5. **Remove Docker Images:**
+
+   Use the following commands to remove the Docker images used by Coolify:
+
+   ```bash
+   sudo docker rmi ghcr.io/coollabsio/coolify:latest
+   sudo docker rmi ghcr.io/coollabsio/coolify-helper:latest
+   sudo docker rmi quay.io/soketi/soketi:1.6-16-alpine
+   sudo docker rmi postgres:15-alpine
+   sudo docker rmi redis:alpine
+   ```
+
+After completing these steps, Coolify will be uninstalled from your server.
