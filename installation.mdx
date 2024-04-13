@@ -1,25 +1,23 @@
 ---
 title: Installation - Self-hosted
-'og:title': "How to install self-hosted version of Coolify"
+"og:title": "How to install self-hosted version of Coolify"
 description: "A guide to install self-hosted version of Coolify on your server."
 ---
 
-To get started, you need a server, it can be a VPS, a Raspberry Pi, or any other server that you have SSH access to. 
+To get started, you need a server, it can be a VPS, a Raspberry Pi, or any other server that you have SSH access to.
 
 <Tip>
-If you don't have a server or server provider yet, we prefer to use Hetzner. 
+If you don't have a server or server provider yet, we prefer to use Hetzner.
 
 You can use our [referral link](https://coolify.io/hetzner). It will helps us to keep the project alive.
+
 </Tip>
 
 <Info>
-TLDR for installation:
-```bash
-curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
-```
+  TLDR for installation: ```bash curl -fsSL
+  https://cdn.coollabs.io/coolify/install.sh | bash ```
 </Info>
-## Requirements
-### Supported Operating Systems
+## Requirements ### Supported Operating Systems
 
 - Debian based Linux distributions (Debian, Ubuntu, etc.)
 - Redhat based Linux distributions (CentOS, Fedora, Redhat, AlmaLinux, Rocky etc.)
@@ -29,12 +27,13 @@ curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
 
 ### Supported Architectures
 
-- AMD64 
+- AMD64
 - ARM64
 
 ### Minimum Required Server
 
 #### For Coolify
+
 - 2 CPUs
 - 2 GBs memory
 - 30+ GB of storage for the images.
@@ -67,10 +66,11 @@ For the following things:
 - 3 Redis databases
 - 2 PostgreSQL databases
 ```
+
 </Tip>
 
-
 ## Installation
+
 ### Automated
 
 This works with Docker Engine **(not Docker Desktop, for that, go [here](#docker-desktop-installation))** on any supported Linux distribution.
@@ -82,6 +82,7 @@ This works with Docker Engine **(not Docker Desktop, for that, go [here](#docker
     <Tip>
     If you would like to use a custom SSH port, you can set it on the `localhost` server after you installed Coolify.
     </Tip>
+
   </Step>
   <Step title="Curl Installed">
     Make sure `curl` command is available on your server.
@@ -110,7 +111,6 @@ The script will do the following on your operating system.
 - Creates an SSH key for Coolify to be able to manage this server from itself at `/data/coolify/ssh/keys/id.root@host.docker.internal`.
 - Install and start dockerized `Coolify`.
 
-
 ### Manually
 
 <Steps>
@@ -131,13 +131,16 @@ The script will do the following on your operating system.
     mkdir -p /data/coolify/ssh/{keys,mux}
     mkdir -p /data/coolify/proxy/dynamic
     ```
+
   </Step>
   <Step title="Generate SSH Key">
     Generate an SSH key for Coolify to be able to manage this server from itself.
 
     ```bash
-   ssh-keygen -f /data/coolify/ssh/keys/id.root@host.docker.internal -t ed25519 -N '' -C root@coolify
-    ```
+
+ssh-keygen -f /data/coolify/ssh/keys/id.root@host.docker.internal -t ed25519 -N '' -C root@coolify
+```
+
   </Step>
   <Step title="Setup Your SSH Key">
     Add your public SSH key to `~/.ssh/authorized_keys`. This will allow Coolify to connect to this server from itself.
@@ -149,9 +152,10 @@ The script will do the following on your operating system.
     <Tip>
     You can skip this step if you already have an SSH key. But you need to add this key to your Coolify instance after installation.
     </Tip>
+
   </Step>
     <Step title="Setup Configuration Files">
-    Copy the `docker-compose.yml`, `docker-compose.prod.yml`, `.e`nv.production` & `upgrade.sh` files from Coolify's CDN to `/data/coolify/source`.
+    Copy the `docker-compose.yml`, `docker-compose.prod.yml`, `.env.production` & `upgrade.sh` files from Coolify's CDN to `/data/coolify/source`.
 
     ```bash
     curl -fsSL https://cdn.coollabs.io/coolify/docker-compose.yml -o /data/coolify/source/docker-compose.yml
@@ -159,6 +163,7 @@ The script will do the following on your operating system.
     curl -fsSL https://cdn.coollabs.io/coolify/.env.production -o /data/coolify/source/.env
     curl -fsSL https://cdn.coollabs.io/coolify/upgrade.sh -o /data/coolify/source/upgrade.sh
     ```
+
   </Step>
   <Step title="Set Permissions">
    Set permissions for all the files and directories.
@@ -183,6 +188,7 @@ The script will do the following on your operating system.
 
     Make sure you save the values somewhere. If you lose them, you will lose access to your Coolify installation and all your data.
     </Warning>
+
   </Step>
   <Step title="Default Docker Network">
     Make sure the default `coolify` Docker network is available.
@@ -203,7 +209,8 @@ The script will do the following on your operating system.
 ### Docker Desktop
 
 <Warning>
-This is not recommended for production usage. This is only for testing purposes.
+  This is not recommended for production usage. This is only for testing
+  purposes.
 </Warning>
 
 - Install [Docker Desktop](https://www.docker.com/products/docker-desktop) for Windows.
