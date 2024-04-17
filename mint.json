@@ -169,7 +169,8 @@
         "knowledge-base/server/openssh",
         "knowledge-base/server/oracle-cloud",
         "knowledge-base/server/proxies",
-        "knowledge-base/server/automated-cleanup"
+        "knowledge-base/server/automated-cleanup",
+        "knowledge-base/server/non-root-user"
       ]
     },
     {
