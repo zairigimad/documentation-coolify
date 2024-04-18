@@ -45,7 +45,7 @@
       "url": "knowledge-base"
     },
     {
-      "name": "Applications, Databases & Services",
+      "name": "Resources",
       "url": "resources"
     },
     {
@@ -78,19 +78,32 @@
       ]
     },
     {
+      "group": "",
+      "pages": [
+        "resources/index"
+      ]
+    },
+    {
       "group": "Applications",
       "pages": [
-        "resources/rails",
-        "resources/laravel",
-        "resources/django",
-        "resources/svelte-kit",
-        "resources/nextjs",
-        "resources/jekyll"
+        "resources/applications/index",
+        "resources/applications/rails",
+        "resources/applications/laravel",
+        "resources/applications/django",
+        "resources/applications/svelte-kit",
+        "resources/applications/nextjs",
+        "resources/applications/jekyll"
       ]
     },
     {
       "group": "Services",
       "pages": [
+        "resources/services/index",
+        "resources/services/appsmith",
+        "resources/services/appwrite",
+        "resources/services/authentik",
+        "resources/services/babybuddy",
+        "resources/services/budge",
         "resources/services/plausible"
       ]
     },
