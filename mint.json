@@ -101,6 +101,7 @@
         "resources/services/index",
         "resources/services/appsmith",
         "resources/services/appwrite",
+        "resources/services/activepieces",
         "resources/services/authentik",
         "resources/services/babybuddy",
         "resources/services/budge",
