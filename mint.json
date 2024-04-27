@@ -135,7 +135,7 @@
       ]
     },
     {
-      "group": "Knowledge Base",
+      "group": "General",
       "pages": [
         "knowledge-base/faq",
         "knowledge-base/applications",
@@ -150,6 +150,12 @@
         "knowledge-base/drain-logs",
         "knowledge-base/commands",
         "knowledge-base/add-a-service"
+      ]
+    },
+    {
+      "group": "How-tos",
+      "pages": [
+        "knowledge-base/how-to/hetzner-loadbalancing"
       ]
     },
     {
