@@ -1,6 +1,6 @@
 ---
 title: Commands
-'og:title': "What commands are avaiable to manage my Coolify server"
+"og:title": "What commands are avaiable to manage my Coolify server"
 description: A list of commands that you can use to manage your Coolify server.
 ---
 
@@ -14,15 +14,17 @@ Login to your server through SSH and execute the following command:
 ```bash
 docker exec -ti coolify bash -c "php artisan root:reset-password"
 ```
+
   </Accordion>
   <Accordion title="Root email change.">
   You can change root user's email.
 
-  Login to your server through SSH and execute the following command:
+Login to your server through SSH and execute the following command:
 
 ```bash
 docker exec -ti coolify bash -c "php artisan root:change-email"
 ```
+
   </Accordion>
     <Accordion title="Delete a stuck service.">
  You can easily delete a stucked service.

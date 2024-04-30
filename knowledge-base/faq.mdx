@@ -1,10 +1,11 @@
 ---
 title: FAQ
-'og:title': "Frequently Asked Questions (FAQ) with Coolify"
+"og:title": "Frequently Asked Questions (FAQ) with Coolify"
 description: "Here you can find answers to the most common questions, errors and problems."
 ---
 
 ## Server
+
 <AccordionGroup>
   <Accordion title="Permission denied (publickey).">
     Error: `Server is not reachable. Reason: root@host.docker.internal: Permission denied (publickey).`
@@ -22,14 +23,23 @@ description: "Here you can find answers to the most common questions, errors and
   <Accordion title="Custom SSH Port">
   If you would like to use a custom SSH port, you can set it in the `Server` tab of your server.
 
-  If you are self-hosting Coolify, you can simply set it after you installed Coolify on the `localhost` server.
+If you are self-hosting Coolify, you can simply set it after you installed Coolify on the `localhost` server.
+
   </Accordion>
-    <Accordion title="Increase Concurrent Builds">
-  If you would like to increase the number of concurrent builds, you can set it in the `Server` tab of your server.
+  <Accordion title="Increase Concurrent Builds">
+    If you would like to increase the number of concurrent builds, you can set it in the `Server` tab of your server.
+  </Accordion>
+   <Accordion title="Coolify Cloud Public IPs">
+    If you need the public facing IPs to allow inbound connections to your servers, here is an up-to-date list of IPs that you can use to whitelist:
+
+    - https://coolify.io/ipv4.txt
+    - https://coolify.io/ipv6.txt
+
   </Accordion>
 </AccordionGroup>
 
 ## Cloudflare
+
 <AccordionGroup>
   <Accordion title="Configured but application is not reachable.">
 You need to set your SSL/TLS configuration to at least `Full` in your Cloudflare dashboard.
@@ -46,14 +56,16 @@ Documentation: https://developers.cloudflare.com/ssl/origin-configuration/ssl-mo
 </AccordionGroup>
 
 ## Applications
+
 <AccordionGroup>
   <Accordion title="How to map a port the server?">
-  If you want to map a port the host system (server), you need to use [Ports Mappings](/knowledge-base/applications#port-mappings) feature.
+    If you want to map a port the host system (server), you need to use [Ports
+    Mappings](/knowledge-base/applications#port-mappings) feature.
   </Accordion>
 </AccordionGroup>
 
-
 ## Database
+
 <AccordionGroup>
   <Accordion title="Cannot connect to database during build phase.">
    Some applications / libraries (Prisma) need to connect to the database during the build phase, to run migrations for example.
@@ -65,6 +77,7 @@ Documentation: https://developers.cloudflare.com/ssl/origin-configuration/ssl-mo
 
     ## Other
     Other build packs could reach database internally - if they are placed in the same network. You can check this by going to the `Server` tab on both resources and check if they are in the same network and server.
+
   </Accordion>
 
 </AccordionGroup>

@@ -1,6 +1,6 @@
 ---
 title: "Enable Dashboard"
-'og:title': "How to enable Traefik's dashboard with Coolify"
+"og:title": "How to enable Traefik's dashboard with Coolify"
 description: "A guide on how to enable Traefik's dashboard with Coolify"
 ---
 
@@ -11,7 +11,8 @@ To enable access from the internet, you need to add a dynamic configuration and 
 ## Secure mode (with Dynamic Configuration)
 
 <Tip>
-How to configure Traefik's dynamic configuration? [Read more](./dynamic-configurations)
+  How to configure Traefik's dynamic configuration? [Read
+  more](./dynamic-configurations)
 </Tip>
 
 You can enable Traefik's dashboard by adding the following dynamic configuration:
@@ -36,6 +37,7 @@ Replace `<DOMAIN_FOR_TRAEFIK>`, `<GENERATED_USERNAME>`, and `<GENERATED_PASSWORD
 You can reach the dashboard by visiting `http://<DOMAIN_FOR_TRAEFIK>/dashboard/`.
 
 ### How to generate user/password?
+
 You can generate your password with an [online htpasswd generator](https://www.web2generators.com/apache-tools/htpasswd-generator) or [htpasswd](https://httpd.apache.org/docs/current/programs/htpasswd.html) command:
 
 ```bash
@@ -43,11 +45,13 @@ htpasswd -nbB test test
 ```
 
 Example output:
+
 ```bash
 test:$apr1$H6uskkkW$IgXLP6ewTrSuBkTrqE8wj/
 ```
 
 ## Insecure Mode (Not Recommended)
+
 If you want to enable the dashboard in insecure mode (without a password), all you need to do is go to the proxy configurations view and change the `insecure` setting to `true`, then restart the proxy..
 
 ```yaml{4}

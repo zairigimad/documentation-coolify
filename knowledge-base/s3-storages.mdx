@@ -1,16 +1,17 @@
 ---
 title: "S3 Storages"
-'og:title': "How to configure S3 compatible storage for Coolify"
+"og:title": "How to configure S3 compatible storage for Coolify"
 description: "A guide how to configure S3 compatible storage for Coolify."
 ---
 
 Currently supported S3 compatible storages are:
-  - AWS
-  - DigitalOcean Spaces
-  - MinIO
-  - Cloudflare's R2
-  - Backblaze B2
-  - Scaleway Object Storage
+
+- AWS
+- DigitalOcean Spaces
+- MinIO
+- Cloudflare's R2
+- Backblaze B2
+- Scaleway Object Storage
 
 Other's could work, but not tested yet. If you test it, please let us know.
 
@@ -18,23 +19,23 @@ Other's could work, but not tested yet. If you test it, please let us know.
 
 Coolify uses MinIO's client, called [`mc`](https://min.io/docs/minio/linux/reference/minio-mc.html), to copy the backup files to your S3 compatible storage.
 
-
 ## Verification
+
 To be able to use your S3 compatible storage, you need to verify it first. Verification done with `ListObjectsV2` request to your specified bucket.
 
 So you need to create a bucket first, and then you can verify it.
-
 
 # Cloudflare R2
 
 Cloudflare R2 is a new service from Cloudflare, which is a S3 compatible storage. You can use it with Coolify.
 
 ### Configuration
-1. You need to create a bucket first.
-2. Then you need to create a R2 API token with `Object Read & Write` permission. 
-3. You can find the S3 client credentials when the token is created.
-<Tip>
-You will need the `Access Key ID`, `Secret Access Key` and the `S3 endpoint` from this view. Save them.
-</Tip> 
-4. You can use the details from the previous step to configure Coolify.
 
+1. You need to create a bucket first.
+2. Then you need to create a R2 API token with `Object Read & Write` permission.
+3. You can find the S3 client credentials when the token is created.
+   <Tip>
+     You will need the `Access Key ID`, `Secret Access Key` and the `S3
+     endpoint` from this view. Save them.
+   </Tip>{" "}
+4. You can use the details from the previous step to configure Coolify.

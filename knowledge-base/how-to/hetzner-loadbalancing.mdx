@@ -1,6 +1,6 @@
 ---
 title: "Load Balancing on Hetzner"
-'og:title': "How to deploy a loadbalanced application with Coolify on Hetzner"
+"og:title": "How to deploy a loadbalanced application with Coolify on Hetzner"
 description: "Here you can find the documentation for deploying a loadbalanced application with Coolify on Hetzner."
 ---
 
@@ -12,11 +12,10 @@ Your application is growing, and you need to scale it. One of the most common wa
 
 In this guide, we will show you how to deploy a load-balanced application with Coolify on Hetzner Cloud. We will use two (or more) servers to host our application and a load balancer to distribute incoming traffic. We will also show you how to set up a database server if you need one.
 
-<Tip>
-The whole infractructure costs around ~15€ per month.
-</Tip>
+<Tip>The whole infractructure costs around ~15€ per month.</Tip>
 
 ## Requirements
+
 - A domain name managed by Hetzner Cloud
 - 2 (or more) servers on Hetzner Cloud
 - A load balancer on Hetzner Cloud
@@ -24,19 +23,22 @@ The whole infractructure costs around ~15€ per month.
 - Optional: A database server on Hetzner Cloud
 
 ## Steps
+
 <Steps>
   <Step title="Buy Servers">
     First, you need to buy two (or more) servers on Hetzner Cloud. You can choose the server type and location based on your requirements. Make sure to choose servers with enough resources to run your application.
 
-    ## Important 
+    ## Important
     Make sure you create and attach a private network to your servers. This will allow your servers to communicate with each other using a private network.
 
     If you don't have an account on Hetzner Cloud, you can sign up with this [referral link](https://coolify.io/hetzner).
+
   </Step>
   <Step title="Add & validate them in Coolify">
     Once you have bought the servers, you need to add them to Coolify. You can do this by clicking on the `Add Server` button in the Coolify dashboard and following the instructions.
 
     Coolify will automatically install the necessary software on your servers.
+
   </Step>
   <Step title="Optional: Deploy your database">
     It is preferable to have a separate database server for your application. Not just for performance reasons, but also for security reasons. Also in this way you can connect your applications to a centralized database server.
@@ -45,7 +47,7 @@ The whole infractructure costs around ~15€ per month.
 
     Once you have bought the database server, and added it to Coolify, deploy your preferable database type (MySQL, PostgreSQL, etc.) on it.
 
-    ## Important   
+    ## Important
     <Warning>
     We won't use a reverse proxy in this guide. We will bind the database to the public IP address of the server. We will use a firewall to restrict access to the database server.
 
@@ -57,13 +59,14 @@ The whole infractructure costs around ~15€ per month.
     - MySQL: `3306:3306`
     - MariaDB: `3306:3306`
     - MongoDB: `27017:27017`
+
   </Step>
   <Step title="Deploy your applications">
     Now it's time to deploy your application on the app servers. Details of deploying your application will depend on the type of application you are deploying.
 
     With Coolify, you can attach more than one server to the same application. This will allow you to deploy your application on multiple servers.
 
-    ## Important 
+    ## Important
     <Warning>
     We won't use a reverse proxy in this guide. We will bind the application to the public IP address of the server, as the load balancer will handle the routing.
 
@@ -77,15 +80,16 @@ The whole infractructure costs around ~15€ per month.
     </Tip>
 
     Test if your application is working correctly by accessing the public IP address and port of the server in your browser.
+
   </Step>
    <Step title="Add & configure the loadbalancer">
-    Now it's time to add a load balancer to distribute incoming traffic across your servers. 
+    Now it's time to add a load balancer to distribute incoming traffic across your servers.
 
     This loadbalancer will do the following:
     - Distribute incoming traffic across your servers
     - Terminates TLS connections (makes your application secure with HTTPS and forwards the traffic to your servers over HTTP)
     - Health checks your servers and routes traffic to healthy servers
-    
+
     Your application is running on `port 8000` on both servers and you have a domain name `example.com`.
 
     1. Go to the Hetzner Cloud Console and click on `Load Balancers` in the left sidebar.
@@ -102,6 +106,7 @@ The whole infractructure costs around ~15€ per month.
     12. And finally name your load balancer and click on `Create & Buy now`.
 
     Wait for the load balancer to be created and healthy. Once it's healthy, you can check if your application is accessible via the loadbalancer's IP address.
+
   </Step>
    <Step title="Setup DNS">
     Now it's time to point your domain name to the `load balancer's IP address`. You can do this by adding an `A` record to your domain name provider's DNS settings.
@@ -132,6 +137,3 @@ The whole infractructure costs around ~15€ per month.
 
   </Step>
 </Steps>
-
-
-
