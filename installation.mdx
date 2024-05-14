@@ -14,6 +14,7 @@ You can use our [referral link](https://coolify.io/hetzner). It will helps us to
 </Tip>
 
 <Info>
+
   TLDR for installation: 
   ```bash 
   curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash 
@@ -158,7 +159,7 @@ ssh-keygen -f /data/coolify/ssh/keys/id.root@host.docker.internal -t ed25519 -N 
 
   </Step>
     <Step title="Setup Configuration Files">
-    Copy the `docker-compose.yml`, `docker-compose.prod.yml`, `.e`nv.production` & `upgrade.sh` files from Coolify's CDN to `/data/coolify/source`.
+    Copy the `docker-compose.yml`, `docker-compose.prod.yml`, `.env.production` & `upgrade.sh` files from Coolify's CDN to `/data/coolify/source`.
 
     ```bash
     curl -fsSL https://cdn.coollabs.io/coolify/docker-compose.yml -o /data/coolify/source/docker-compose.yml
