@@ -146,7 +146,6 @@
         "knowledge-base/environment-variables",
         "knowledge-base/persistent-storage",
         "knowledge-base/backups",
-        "knowledge-base/s3-storages",
         "knowledge-base/dns-configuration",
         "knowledge-base/drain-logs",
         "knowledge-base/commands",
@@ -218,6 +217,14 @@
         "knowledge-base/server/proxies",
         "knowledge-base/server/automated-cleanup",
         "knowledge-base/server/non-root-user"
+      ]
+    },
+    {
+      "group": "S3",
+      "pages": [
+        "knowledge-base/s3/index",
+        "knowledge-base/s3/aws",
+        "knowledge-base/s3/r2"
       ]
     },
     {
