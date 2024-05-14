@@ -45,7 +45,7 @@
       "url": "knowledge-base"
     },
     {
-      "name": "Applications, Databases & Services",
+      "name": "Resources",
       "url": "resources"
     },
     {
@@ -71,6 +71,7 @@
       "pages": [
         "introduction",
         "screenshots",
+        "videos",
         "quickstart",
         "installation",
         "uninstall",
@@ -78,24 +79,64 @@
       ]
     },
     {
+      "group": "",
+      "pages": [
+        "resources/index"
+      ]
+    },
+    {
       "group": "Applications",
       "pages": [
-        "resources/rails",
-        "resources/laravel",
-        "resources/django",
-        "resources/svelte-kit",
-        "resources/nextjs",
-        "resources/jekyll"
+        "resources/applications/index",
+        "resources/applications/rails",
+        "resources/applications/laravel",
+        "resources/applications/django",
+        "resources/applications/svelte-kit",
+        "resources/applications/nextjs",
+        "resources/applications/jekyll"
       ]
     },
     {
       "group": "Services",
       "pages": [
+        "resources/services/index",
+        "resources/services/appsmith",
+        "resources/services/appwrite",
+        "resources/services/activepieces",
+        "resources/services/authentik",
+        "resources/services/babybuddy",
+        "resources/services/budge",
+        "resources/services/changedetection",
+        "resources/services/classicpress",
+        "resources/services/code-server",
+        "resources/services/dashboard",
+        "resources/services/directus",
+        "resources/services/docker-registry",
+        "resources/services/dokuwiki",
+        "resources/services/duplicati",
+        "resources/services/emby",
+        "resources/services/emby-stat",
+        "resources/services/fider",
+        "resources/services/filebrowser",
+        "resources/services/firefly-iii",
+        "resources/services/formbricks",
+        "resources/services/ghost",
+        "resources/services/gitea",
+        "resources/services/glitchtip",
+        "resources/services/grafana",
+        "resources/services/grocy",
+        "resources/services/heimdall",
+        "resources/services/jellyfin",
+        "resources/services/kuzzle",
+        "resources/services/logto",
+        "resources/services/meilisearch",
+        "resources/services/metabase",
+        "resources/services/metube",
         "resources/services/plausible"
       ]
     },
     {
-      "group": "Knowledge Base",
+      "group": "General",
       "pages": [
         "knowledge-base/faq",
         "knowledge-base/applications",
@@ -105,11 +146,16 @@
         "knowledge-base/environment-variables",
         "knowledge-base/persistent-storage",
         "knowledge-base/backups",
-        "knowledge-base/s3-storages",
         "knowledge-base/dns-configuration",
         "knowledge-base/drain-logs",
         "knowledge-base/commands",
         "knowledge-base/add-a-service"
+      ]
+    },
+    {
+      "group": "How-tos",
+      "pages": [
+        "knowledge-base/how-to/hetzner-loadbalancing"
       ]
     },
     {
@@ -169,7 +215,16 @@
         "knowledge-base/server/openssh",
         "knowledge-base/server/oracle-cloud",
         "knowledge-base/server/proxies",
-        "knowledge-base/server/automated-cleanup"
+        "knowledge-base/server/automated-cleanup",
+        "knowledge-base/server/non-root-user"
+      ]
+    },
+    {
+      "group": "S3",
+      "pages": [
+        "knowledge-base/s3/index",
+        "knowledge-base/s3/aws",
+        "knowledge-base/s3/r2"
       ]
     },
     {

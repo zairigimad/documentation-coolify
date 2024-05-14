@@ -1,8 +1,9 @@
 ---
 title: "Database Backups"
-'og:title': "How to configure database backups in Coolify"
+"og:title": "How to configure database backups in Coolify"
 description: "A guide how backups work in Coolify."
 ---
+
 Scheduled database backups could be configured for PostgreSQL and for Coolify itself.
 
 This schedules are based on cron expressions, so you can configure them to run as often as you want.
@@ -21,16 +22,17 @@ const VALID_CRON_STRINGS = [
 ```
 
 ## PostgreSQL
+
 Coolify creates a full backup of your PostgreSQL databases. You can specify which database to backup, with a comma separated list.
 
-<Tip>
-Coolify own database is also backed up using this method.
-</Tip>
+<Tip>Coolify own database is also backed up using this method.</Tip>
 
 ### Backup command
+
 ```bash
 pg_dump --format=custom --no-acl --no-owner --username <username> <databaseName>
 ```
+
 ### Restore command
 
 The backup has custom format, so you can restore it using the following command (or with any equivalent tool):
@@ -38,6 +40,7 @@ The backup has custom format, so you can restore it using the following command 
 ```bash
 pg_restore --verbose --clean -h localhost -U postgres -d postgres pg-dump-postgres-1697207547.dmp
 ```
+
 ## MySQL
 
 ```bash
@@ -63,4 +66,5 @@ mongodump --authenticationDatabase=admin --uri=<uri> --gzip --archive=<archive> 
 ```
 
 ## S3 Backups
-You can also define your own [S3 compatible](./s3-storages) storage to store your backups. 
+
+You can also define your own [S3 compatible](./s3-storages) storage to store your backups.
