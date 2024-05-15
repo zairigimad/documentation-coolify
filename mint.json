@@ -75,6 +75,7 @@
         "quickstart",
         "installation",
         "uninstall",
+        "downgrade",
         "contact"
       ]
     },
