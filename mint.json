@@ -112,7 +112,6 @@
         "resources/services/code-server",
         "resources/services/dashboard",
         "resources/services/directus",
-        "resources/services/registry",
         "resources/services/dokuwiki",
         "resources/services/duplicati",
         "resources/services/emby",

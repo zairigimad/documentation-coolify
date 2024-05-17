@@ -47,6 +47,11 @@ tls:
       keyFile: /traefik/certs/domain2.key
 ```
 
+<Tip>
+  `/traefik` is the directory inside `coolify-proxy` container where
+  `/data/coolify/proxy` is mounted.
+</Tip>
+
 Traefik will automatically use this certificate if it matches the domain of the incoming request and the certificate in any of the provided files.
 
   </Step>
