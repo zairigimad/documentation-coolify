@@ -112,7 +112,7 @@
         "resources/services/code-server",
         "resources/services/dashboard",
         "resources/services/directus",
-        "resources/services/docker-registry",
+        "resources/services/registry",
         "resources/services/dokuwiki",
         "resources/services/duplicati",
         "resources/services/emby",
@@ -250,6 +250,7 @@
         "knowledge-base/traefik/basic-auth",
         "knowledge-base/traefik/dashboard",
         "knowledge-base/traefik/dynamic-configurations",
+        "knowledge-base/traefik/custom-ssl-certs",
         "knowledge-base/traefik/load-balancing",
         "knowledge-base/traefik/redirects",
         "knowledge-base/traefik/wildcard-certificates"
