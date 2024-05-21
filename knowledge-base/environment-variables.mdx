@@ -1,6 +1,6 @@
 ---
 title: "Environment Variables"
-'og:title': "How to use environment variables with Coolify"
+"og:title": "How to use environment variables with Coolify"
 description: "A guide how to use environment variables in Coolify."
 ---
 
@@ -12,10 +12,10 @@ You can define environment variables for your resources, and they will be availa
 
 If you would like to set environment variables for the build process, you can do by setting `Build Variable` on the UI.
 
-
 ## Shared Variables
 
 You could have 3 types of shared variables:
+
 1. Team Based
 2. Project Based
 3. Environment Based (production, staging, etc.)
@@ -36,7 +36,6 @@ You can set them on the `Projects` page, under the gear icon and use it with <sp
 
 You can set them on the `Environments` page (select a `Project`), under the gear icon and use it with <span v-pre>`{{environment.NODE_ENV}}`</span>.
 
-
 ## Predefined Variables
 
 Coolify predefines some variables for you, so you can use them in your application. All you need to do is to add an environment variable like this to your application.
@@ -47,11 +46,26 @@ MY_VARIABLE=$SOURCE_COMMIT
 # You will have the commit hash of the source code in your application as an environment variable in MY_VARIABLE
 ```
 
+### `COOLIFY_FQDN`
+
+Fully qualified domain name(s) of the application.
+
+### `COOLIFY_URL`
+
+URL(s) of the application.
+
+### `COOLIFY_BRANCH`
+
+Branch name of the source code.
+
 ### `SOURCE_COMMIT`
+
 Commit hash of the source code.
 
 ### `PORT`
+
 If not set: it is set to the `Port Exposes`'s first port.
 
 ### `HOST`
+
 If not set: it is set to `0.0.0.0`.

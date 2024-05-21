@@ -1,15 +1,17 @@
 ---
 title: "Load-balancing"
-'og:title': "How to configure a load-balancer with Traefik in Coolify"
+"og:title": "How to configure a load-balancer with Traefik in Coolify"
 description: "A guide to configure load-balancing with Traefik in Coolify"
 ---
 
 You can easily use Traefik to loadbalance an application between:
+
 - 2+ servers
 - 2+ containers in one server
 
 ## 2+ servers
-### Prerequisites 
+
+### Prerequisites
 
 1. Make sure you set the right DNS record for your domain. Your loadbalanced domain should point to the server's IP address where you are setting up the loadbalancer.
 2. You must deploy your application to more than one servers: read more [here](../server/multiple-servers).
@@ -18,7 +20,8 @@ You can easily use Traefik to loadbalance an application between:
 5. After your application are deployed on all servers, you need to make a dynamic configuration for Traefik to loadbalance between your servers in the `/data/coolify/proxy/dynamic` directory.
 
 ### Dynamic Configuration
-Login to your server that you would like to use as a loadbalancer and create a file (you can use any name, like `my-first-lb.yaml`) in the `/data/coolify/proxy/dynamic` directory.
+
+On your Coolify's UI, you can go the your Server settings / Proxy tab where you can add the dynamic configuration.
 
 The following configuration is valid if you would like to use https.
 
@@ -48,7 +51,7 @@ http:
       tls:
         certResolver: letsencrypt
       # Change <CHANGE_THIS_TO_YOUR_DOMAIN> to your domain, like `example.com` without `https://`
-      rule: Host(`<CHANGE_THIS_TO_YOUR_DOMAIN>`) 
+      rule: Host(`<CHANGE_THIS_TO_YOUR_DOMAIN>`)
   services:
     lb-https:
       loadBalancer:
@@ -78,7 +81,7 @@ http:
         - http
       service: lb-http
       # Change <CHANGE_THIS_TO_YOUR_DOMAIN> to your domain, like `example.com` without `http://`
-      rule: Host(`<CHANGE_THIS_TO_YOUR_DOMAIN>`) 
+      rule: Host(`<CHANGE_THIS_TO_YOUR_DOMAIN>`)
   services:
     lb-http:
       loadBalancer:
@@ -88,13 +91,17 @@ http:
           - url: 'http://<CHANGE_THIS_TO_YOUR_IP_ADDRESS>'
           # Add any number of servers you want to loadbalance between
 ```
+
 ## 2+ containers in one server
+
 ### Prerequisites
+
 1. Make sure you set the right DNS record for your domain. Your loadbalanced domain should point to the server's IP address where you are setting up the loadbalancer.
 2. You must deploy your application to more than one containers in one server.
 3. Make sure Traefik is running on the server.
-   
+
 ### Dynamic Configuration
+
 The following configuration is valid if you would like to use https.
 
 ```yaml{18,26,34,35}
@@ -115,7 +122,7 @@ http:
         - https
       service: lb-https
       # Change <CHANGE_THIS_TO_YOUR_DOMAIN> to your domain, like `example.com` without `http://`
-      rule: Host(`<CHANGE_THIS_TO_YOUR_DOMAIN>`) 
+      rule: Host(`<CHANGE_THIS_TO_YOUR_DOMAIN>`)
     lb-http:
       middlewares:
         - redirect-to-https
@@ -123,7 +130,7 @@ http:
         - http
       service: noop
       # Change <CHANGE_THIS_TO_YOUR_DOMAIN> to your domain, like `example.com` without `http://`
-      rule: Host(`<CHANGE_THIS_TO_YOUR_DOMAIN>`) 
+      rule: Host(`<CHANGE_THIS_TO_YOUR_DOMAIN>`)
   services:
     lb-https:
       loadBalancer:
@@ -155,7 +162,7 @@ http:
         - http
       service: lb-http
       # Change <CHANGE_THIS_TO_YOUR_DOMAIN> to your domain, like `example.com` without `http://`
-      rule: Host(`<CHANGE_THIS_TO_YOUR_DOMAIN>`) 
+      rule: Host(`<CHANGE_THIS_TO_YOUR_DOMAIN>`)
   services:
     lb-http:
       loadBalancer:

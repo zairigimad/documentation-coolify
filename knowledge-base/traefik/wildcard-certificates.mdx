@@ -1,21 +1,26 @@
 ---
 title: "Wildcard SSL Certificates"
-'og:title': "How to create wildcard SSL certificates with Traefik in Coolify"
+"og:title": "How to create wildcard SSL certificates with Traefik in Coolify"
 description: "A guide to configure wildcard subdomain redirects (with Traefik wildcard certificates) in Coolify."
 ---
 
 ## Prerequisites
-- You need to have a domain name and a DNS provider that supports wildcard subdomains. 
+
+- You need to have a domain name and a DNS provider that supports wildcard subdomains.
 - You need to use [dnsChallenge](https://doc.traefik.io/traefik/https/acme/#dnschallenge) in Traefik to get wildcard certificates from Let's Encrypt.
 - You need to use one of the supported DNS [providers](https://doc.traefik.io/traefik/https/acme/#providers).
 
+<Tip>
+Each provider needs environment variables to be set in the Traefik configuration. You can find the required variables in the [official documentation](https://doc.traefik.io/traefik/https/acme/#providers).
+</Tip>
+
 ## Configuration
+
 1. Setup your wildcard subdomain DNS records, `*.coolify.io`.
 2. Go to your Proxy settings (Servers / Proxy menu) and add the following configuration based on your [providers](https://doc.traefik.io/traefik/https/acme/#providers). The example will use `Hetzner` as a provider.
 
-The important part is highlighted in the example below.
 
-```bash{10-11,40-44,51-53}
+```bash
 version: '3.8'
 networks:
   coolify:
@@ -73,6 +78,7 @@ services:
       - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https
       - traefik.http.middlewares.gzip.compress=true
 ```
+
 > You can also set `env_file` instead of `environment` in the example above, but then you need to create a `.env` file with the `HETZNER_API_KEY` variable on the server.
 
 > Change `--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=hetzner` to your provider.
@@ -80,12 +86,13 @@ services:
 Now you have two options to configure your wildcard subdomain for your resources.
 
 ### Normal
-If you would like to use one (wildcard) certificate for all of your resources, you can use this option. 
+
+If you would like to use one (wildcard) certificate for all of your resources, you can use this option.
 
 It is useful, because Traefik do not need to generate a new certificate for every resource, so new deployments will be available immediately without waiting for the certificate generation.
 
 - In your application, set your FQDN to a subdomain you would like to use: `https://example.coolify.io`.
-  
+
 ```bash
 traefik.enable=true
 traefik.http.routers.<unique_router_name>.rule=Host(`example.coolify.io`) && PathPrefix(`/`)
@@ -101,11 +108,12 @@ traefik.http.routers.<unique_router_name>.middlewares=redirect-to-https
 ```
 
 ### SaaS
+
 Redirect all subdomains to one application. You can use this option if you want to use Coolify as a SaaS provider.
 
 - In your application, leave the FQDN configuration `empty`.
 - Add the following custom label configuration:
-  
+
 ```bash
 traefik.enable=true
 traefik.http.routers.<unique_router_name>.rule=HostRegexp(`{subdomain:[a-zA-Z0-9-]+}.coolify.io`)
@@ -120,12 +128,11 @@ traefik.http.routers.<unique_router_name>.entryPoints=http
 traefik.http.routers.<unique_router_name>.middlewares=redirect-to-https
 ```
 
-
 > `traefik.http.routers.<unique_router_name>.tls.certresolver` should be the same as your `certresolver` name in Traefik proxy configuration, by default `letsencrypt`.
 
 > `traefik.http.services.<unique_service_name>.loadbalancer.server.port` should be the same as your application listens on. Port 80 if you use a static deployment.
 
-
 <Warning>
-You cannot use both configurations (Normal & SaaS) at the same time on one server.
+  You cannot use both configurations (Normal & SaaS) at the same time on one
+  server.
 </Warning>
