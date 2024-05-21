@@ -159,6 +159,12 @@
       ]
     },
     {
+      "group": "Administration (Self-hosted)",
+      "pages": [
+        "knowledge-base/self-hosted-admin/delete-user"
+      ]
+    },
+    {
       "group": "API Reference",
       "pages": [
         "api-reference/introduction",
