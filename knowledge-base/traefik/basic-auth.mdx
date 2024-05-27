@@ -30,11 +30,16 @@ In the example above, we are using `test` as username and `test` as password.
 
 You only need to add the basicauth middleware.
 
-```bash
-traefik.http.middlewares.custom-auth.basicauth.users=test:$2y$12$ci.4U63YX83CwkyUrjqxAucnmi2xXOIlEF6T/KdP9824f1Rf1iyNG
+```yaml
+services:
+  changedetection:
+    labels:
+      - 'traefik.http.middlewares.custom-auth.basicauth.users=test:$2y$12$ci.4U63YX83CwkyUrjqxAucnmi2xXOIlEF6T/KdP9824f1Rf1iyNG'
 ```
 
 In the example above, we are using `test` as username and `test` as password.
+
+Enable `Escape special characters in labels?` when applying basic auth labels.
 
 ## How to generate user/password?
 
