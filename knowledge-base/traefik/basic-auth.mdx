@@ -15,6 +15,15 @@ traefik.http.middlewares.custom-auth.basicauth.users=test:$2y$12$ci.4U63YX83Cwky
 traefik.http.routers.<unique_router_name>.middlewares=custom-auth
 ```
 
+<Tip>
+You most likely have a `traefik.http.middlewares` label already set. In that case, you can append the `custom-auth` middleware to the existing value.
+For example:
+
+```bash
+traefik.http.routers.<unique_router_name>.middlewares=gzip,custom-auth
+```
+</Tip>
+
 In the example above, we are using `test` as username and `test` as password.
 
 ## Docker Compose based Applications & one-click Services
