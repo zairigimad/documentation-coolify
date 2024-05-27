@@ -208,6 +208,12 @@
           "pages": [
             "knowledge-base/git/bitbucket/integration"
           ]
+        },
+        {
+          "group": "Gitea",
+          "pages": [
+            "knowledge-base/git/gitea/integration"
+          ]
         }
       ]
     },
