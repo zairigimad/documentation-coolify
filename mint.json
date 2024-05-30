@@ -75,6 +75,7 @@
         "quickstart",
         "installation",
         "uninstall",
+        "upgrade",
         "downgrade",
         "contact"
       ]
