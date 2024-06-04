@@ -11,16 +11,16 @@ All you need to do is to set custom labels on your application.
 ## Standard Applications
 
 ```bash
-traefik.http.middlewares.custom-auth.basicauth.users=test:$2y$12$ci.4U63YX83CwkyUrjqxAucnmi2xXOIlEF6T/KdP9824f1Rf1iyNG
-traefik.http.routers.<unique_router_name>.middlewares=custom-auth
+traefik.http.middlewares.<random_unique_name>.basicauth.users=test:$2y$12$ci.4U63YX83CwkyUrjqxAucnmi2xXOIlEF6T/KdP9824f1Rf1iyNG
+traefik.http.routers.<unique_router_name>.middlewares=<random_unique_name>
 ```
 
 <Tip>
-You most likely have a `traefik.http.middlewares` label already set. In that case, you can append the `custom-auth` middleware to the existing value.
+You most likely have a `traefik.http.middlewares` label already set. In that case, you can append the `<random_unique_name>` middleware to the existing value.
 For example:
 
 ```bash
-traefik.http.routers.<unique_router_name>.middlewares=gzip,custom-auth
+traefik.http.routers.<unique_router_name>.middlewares=gzip,<random_unique_name>
 ```
 </Tip>
 
@@ -34,7 +34,7 @@ You only need to add the basicauth middleware.
 services:
   changedetection:
     labels:
-      - 'traefik.http.middlewares.custom-auth.basicauth.users=test:$2y$12$ci.4U63YX83CwkyUrjqxAucnmi2xXOIlEF6T/KdP9824f1Rf1iyNG'
+      - 'traefik.http.middlewares.<random_unique_name>.basicauth.users=test:$2y$12$ci.4U63YX83CwkyUrjqxAucnmi2xXOIlEF6T/KdP9824f1Rf1iyNG'
 ```
 
 In the example above, we are using `test` as username and `test` as password.
