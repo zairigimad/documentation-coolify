@@ -133,7 +133,8 @@
         "resources/services/meilisearch",
         "resources/services/metabase",
         "resources/services/metube",
-        "resources/services/plausible"
+        "resources/services/plausible",
+        "resources/services/minio"
       ]
     },
     {
