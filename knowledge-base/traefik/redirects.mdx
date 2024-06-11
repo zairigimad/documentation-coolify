@@ -20,13 +20,15 @@ The configuration is slightly different for `Standard Applications` and `Docker 
 ```bash{4,8-10}
 # A similar line is already defined.
 traefik.http.routers.<unique_router_name>.rule=Host(`www.coolify.io`) && PathPrefix(`/`)
+
 # You need to add the middleware to the router.
 traefik.http.routers.<unique_router_name>.middlewares=example-middleware
+
 # If you have multiple middlewares, you need to add them comma separated.
 # traefik.http.routers.<unique_router_name>.middlewares=gzip,example-middleware
 #
 traefik.http.middlewares.example-middleware.redirectregex.regex=^(http|https)://www\.(.+)
-traefik.http.middlewares.example-middleware.redirectregex.replacement=$${1}://$${2}
+traefik.http.middlewares.example-middleware.redirectregex.replacement=${1}://${2}
 traefik.http.middlewares.example-middleware.redirectregex.permanent=true
 ```
 
@@ -35,13 +37,15 @@ traefik.http.middlewares.example-middleware.redirectregex.permanent=true
 ```bash{4,8-10}
 # A similar line is already defined.
 traefik.http.routers.<unique_router_name>.rule=Host(`coolify.io`) && PathPrefix(`/`)
+
 # You need to add the middleware to the router.
 traefik.http.routers.<unique_router_name>.middlewares=example-middleware
+
 # If you have multiple middlewares, you need to add them comma separated.
 # traefik.http.routers.<unique_router_name>.middlewares=gzip,example-middleware
 #
 traefik.http.middlewares.example-middleware.redirectregex.regex=^(http|https)://(?:www\.)?(.+)
-traefik.http.middlewares.example-middleware.redirectregex.replacement=$${1}://www.$${2}
+traefik.http.middlewares.example-middleware.redirectregex.replacement=${1}://www.${2}
 traefik.http.middlewares.example-middleware.redirectregex.permanent=true
 ```
 
@@ -54,7 +58,7 @@ traefik.http.middlewares.example-middleware.redirectregex.permanent=true
 
 ```bash
 traefik.http.middlewares.example-middleware.redirectregex.regex=^(http|https)://www\.(.+)
-traefik.http.middlewares.example-middleware.redirectregex.replacement=$${1}://$${2}
+traefik.http.middlewares.example-middleware.redirectregex.replacement=${1}://${2}
 traefik.http.middlewares.example-middleware.redirectregex.permanent=true
 ```
 
@@ -62,6 +66,6 @@ traefik.http.middlewares.example-middleware.redirectregex.permanent=true
 
 ```bash
 traefik.http.middlewares.example-middleware.redirectregex.regex=^(http|https)://(?:www\.)?(.+)
-traefik.http.middlewares.example-middleware.redirectregex.replacement=$${1}://www.$${2}
+traefik.http.middlewares.example-middleware.redirectregex.replacement=${1}://www.${2}
 traefik.http.middlewares.example-middleware.redirectregex.permanent=true
 ```
